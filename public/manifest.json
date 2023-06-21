@@ -1,6 +1,6 @@
 {
   "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "오늘 뭐 먹지?",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,5 +11,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "오늘 뭘 먹을지 고민된다면?"
 }
