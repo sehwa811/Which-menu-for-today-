@@ -12,27 +12,12 @@ import { Container, Button } from "react-bootstrap";
 export default function SelectBox() {
   const dispatch = useDispatch<any>();
   const gotoNext = useNavigate();
-  //console.log(selected)
   if (!dispatch) throw new Error("dispatch is null");
 
-  const { ctr, ndl, spc } = useSelector(selectOptions);
-
-  const sendToServer = () => {
-    const formData = new FormData();
-    formData.append("ctr", ctr);
-    formData.append("ndl", ndl);
-    formData.append("spc", spc);
-    return fetch("/pt", {
-      method: "POST",
-      body: formData,
-    });
-  };
+  const { ctr } = useSelector(selectOptions);
 
   const OnClickHandler = async () => {
-    sendToServer();
-    const res = await sendToServer();
-    const data: string | null = await res.json();
-    gotoNext("/menu", { state: { data: data } });
+    gotoNext("/menu");
   };
 
   return (
