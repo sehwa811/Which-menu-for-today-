@@ -1,0 +1,1 @@
+export const selectOptions = (state:any) => state.selected;
