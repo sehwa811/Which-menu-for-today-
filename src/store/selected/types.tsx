@@ -1,7 +1,9 @@
 interface actionType {
-    ADD: string
+    ADD: string;
+    CLEAR: string;
 }
 
 export const ACTION:actionType = {
-    ADD: "ADD"
+    ADD: "ADD",
+    CLEAR: "CLEAR"
 };

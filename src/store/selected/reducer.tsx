@@ -28,6 +28,8 @@ export const reducer = (
     case ACTION.ADD:
       const { value, label } = payload;
       return { ...state, [value]: label };
+    case ACTION.CLEAR:
+      return INITIAL_VALUE;
     default:
         return state;
   }

@@ -6,6 +6,7 @@ import MenuPage from "./routes/MenuPage";
 
 import "./App.css";
 import { QueryClientProvider, QueryClient } from "react-query";
+import ResultMap from "./routes/result/map";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />}></Route>
           <Route path="/menu" element={<MenuPage />}></Route>
+          <Route path="resultMap" element={<ResultMap />}></Route>
         </Routes>
       </QueryClientProvider>
     </>

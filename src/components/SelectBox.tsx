@@ -6,7 +6,6 @@ import { ctrOptions, spcOptions, ndlOptions } from "../datas/options";
 import { selectOptions } from "../store/selected/selector";
 import { sendToReducer } from "../store/selected/action";
 
-import { Container, Button } from "react-bootstrap";
 
 
 export default function SelectBox() {
@@ -16,17 +15,18 @@ export default function SelectBox() {
 
   const { ctr } = useSelector(selectOptions);
 
+
   const OnClickHandler = async () => {
     gotoNext("/menu");
   };
 
   return (
-    <Container fluid="md" className="mt-3">
+    <div className="">
       <label>어느 나라 음식이 좋을까요?</label>
       <Select
         options={ctrOptions}
         onChange={(e: any) => dispatch(sendToReducer(e))}
-        className="mb-3 mt-2"
+        className=""
         theme={(theme) => ({...theme, colors: {...theme.colors, primary: "skyblue", primary25: 'skyblue'} })}
       ></Select>
       {ctr === "그 외" ? null : (
@@ -35,21 +35,21 @@ export default function SelectBox() {
           <Select
             options={ndlOptions}
             onChange={(e: any) => dispatch(sendToReducer(e))}
-            className="mb-3 mt-2"
+            className=""
             theme={(theme) => ({...theme, colors: {...theme.colors, primary: "skyblue", primary25: 'skyblue'} })}
           ></Select>
           <label>매운 음식이 좋을까요?</label>
           <Select
             options={spcOptions}
             onChange={(e: any) => dispatch(sendToReducer(e))}
-            className="mb-3 mt-2"
+            className=""
             theme={(theme) => ({...theme, colors: {...theme.colors, primary: "skyblue", primary25: 'skyblue'} })}
           ></Select>
         </>
       )}
-      <Button onClick={OnClickHandler} className="mt-1 w-100 bg-skyblue">
+      <button onClick={OnClickHandler} className="box-border w-40 h-8 bg-[#bbf7d0] rounded-full">
         메뉴 추천받기
-      </Button>
-    </Container>
+      </button>
+    </div>
   );
 }

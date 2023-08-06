@@ -1,8 +1,9 @@
 import SelectBox from "../components/SelectBox";
 
-
 export default function MainPage() {
-    return <div>
-        <SelectBox></SelectBox>
+  return (
+    <div className="place-content-center bg-[#fafafa] h-screen">
+      <SelectBox></SelectBox>
     </div>
-}
+  );
+};
